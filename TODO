@@ -1,0 +1,6 @@
+* for autobuilder, use a maintainer format like: 
+    CPAN Autobuilder <cpan@example.com>
+
+* you don't need the 'Replaces: core' if installing to SITE
+    only for VENDOR
+    and only if $(TMP)/usr/bin is non-empty
