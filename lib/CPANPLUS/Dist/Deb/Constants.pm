@@ -154,7 +154,7 @@ use constant DEB_PACKAGE_NAME   => sub {my $mod = shift or return;
                                         my $deb = $pre . 'lib' . 
                                                     $pkg . '-perl';
                                                     
-                                        $deb =~ s/_\+/-/g; # no _ or + allowed!
+                                        $deb =~ s/[_+]/-/g; # no _ or + allowed!
                                         
                                         ### strip double leading 'lib'
                                         $deb =~ s/^(${pre}lib)lib/$1/;
@@ -186,13 +186,15 @@ use constant DEB_DEB_FILE_NAME  => sub {my $mod = shift() or return;
                                         my $dir = shift() or return;
                                         my $pre = shift() || '';
                                         my $xs  = shift() ? 1 : 0;
+                                        my $ver = @_ ? shift() : undef;
+                                        
                                         my $arch = $xs
                                             ? DEB_ARCHITECTURE->()
                                             : DEB_RULES_ARCH->();
 
                                         my $name = join '_',
                                             DEB_PACKAGE_NAME->($mod, $pre),
-                                            DEB_VERSION->($mod),
+                                            DEB_VERSION->($mod, $ver),
                                             $arch .'.deb';
                                         return File::Spec->catfile(
                                                 $dir, $name
