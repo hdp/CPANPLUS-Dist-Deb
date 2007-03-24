@@ -326,6 +326,7 @@ sub prepare {
                     
     ### did we already create the package? if so, don't bother to rebuild
     ### unless we are forced to
+
     {   for my $has_xs (0,1) {
             my $pkg = DEB_DEB_FILE_NAME->( $self, $basedir, $prefix, $has_xs);
 

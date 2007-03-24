@@ -154,7 +154,7 @@ use constant DEB_PACKAGE_NAME   => sub {my $mod = shift or return;
                                         my $deb = $pre . 'lib' . 
                                                     $pkg . '-perl';
                                                     
-                                        $deb =~ s/_/-/g; # no _ allowed!
+                                        $deb =~ s/_\+/-/g; # no _ or + allowed!
                                         
                                         ### strip double leading 'lib'
                                         $deb =~ s/^(${pre}lib)lib/$1/;
