@@ -855,7 +855,7 @@ sub create {
     
     ### already created? 
     if( $dist->status->created and not $force ) {
-        msg(loc("You have already created a '%2' distribution -- not doing ".
+        msg(loc("You have already created a '%1' distribution -- not doing ".
                 "so again unless you force", __PACKAGE__ ));     
         return 1;
     }
