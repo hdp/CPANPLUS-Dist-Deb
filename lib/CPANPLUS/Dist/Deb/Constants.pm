@@ -129,7 +129,7 @@ use constant DEB_BIN_BUILDPACKAGE
                                         unless( $p ) {
                                             error(loc(
                                                 "Could not find '%1' in your ".
-                                                "path --unable to genearte ".
+                                                "path --unable to generate ".
                                                 "debian archives",
                                                 'dpkg-buildpackage' ));
                                             return;

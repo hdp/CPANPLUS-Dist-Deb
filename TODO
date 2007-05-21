@@ -4,3 +4,23 @@
 * you don't need the 'Replaces: core' if installing to SITE
     only for VENDOR
     and only if $(TMP)/usr/bin is non-empty
+
+
+* cpan-libcgi-perl is not properly parsed from CGI.pm the release
+* run 'perl Makefile.PL' for Test fails using cpanp-run-perl
+* Have module::build available!
+
+[MSG] Extracted 'Getopt::Long' to '/home/kane/.cpanplus/5.8.8/build/Getopt-Long-2.36'
+Running [/usr/bin/perl /home/kane/sources/svk/oss/cpanplus-devel/bin/cpanp-run-perl /home/kane/.cpanplus/5.8.8/build/Getopt-Long-2.36/Makefile.PL  INSTALLDIRS=site INSTALLSCRIPT=/usr/local/bin]...
+
+Writing Makefile for Getopt::Long
+No such file or directory at /home/kane/sources/svk/oss/cpanplus-devel/bin/cpanp-run-perl line 7.
+[ERROR] Could not run '/usr/bin/perl Makefile.PL': 
+Writing Makefile for Getopt::Long
+No such file or directory at /home/kane/sources/svk/oss/cpanplus-devel/bin/cpanp-run-perl line 7.
+ -- cannot continue
+
+[ERROR] Unable to create a new distribution object for 'Getopt::Long' -- cannot continue
+
+Created 'CPANPLUS::Dist::Deb' distribution for Getopt::Long to:
+Use of uninitialized value in print at /home/kane/sources/svk/oss/cpanplus-devel/bin/cpan2dist line 325.
