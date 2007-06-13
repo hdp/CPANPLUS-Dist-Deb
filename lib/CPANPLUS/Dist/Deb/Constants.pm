@@ -175,9 +175,12 @@ use constant DEB_ORIG_PACKAGE_NAME
                                          $mod->package_extension;
                                 };                                
 
+use constant DEB_DEFAULT_PACKAGE_VERSION
+                                => 1;
                                 
 use constant DEB_VERSION        => sub {my $mod = shift or return;
-                                        my $ver = shift || 1;
+                                        my $ver = shift || 
+                                                  DEB_DEFAULT_PACKAGE_VERSION;
                                         return $mod->package_version . 
                                                 '-' . $ver;
                                 };

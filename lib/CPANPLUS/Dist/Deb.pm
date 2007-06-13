@@ -305,7 +305,8 @@ sub prepare {
             prefix          => { default => 'cpan-', store => \$prefix },
             distribution    => { default => DEB_DEFAULT_RELEASE, 
                                   store => \$distribution },
-            deb_version     => { default => 1, store => \$deb_version },                                  
+            deb_version     => { default => DEB_DEFAULT_PACKAGE_VERSION,
+                                  store => \$deb_version },                                  
             #keep_source     => { default => 0, store => \$keep_source },
             prereq_build    => { default => 0, store => \$prereq_build },
         };
