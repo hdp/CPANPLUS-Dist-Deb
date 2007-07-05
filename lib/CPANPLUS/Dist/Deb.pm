@@ -3,7 +3,7 @@ package CPANPLUS::Dist::Deb;
 use strict;
 use vars    qw[@ISA $VERSION];
 @ISA =      qw[CPANPLUS::Dist];
-$VERSION =  '0.06';
+$VERSION =  '0.08';
 
 use CPANPLUS::inc;
 use CPANPLUS::Error;
