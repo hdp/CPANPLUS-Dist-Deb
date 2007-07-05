@@ -36,6 +36,9 @@ use constant DEB_CHANGELOG      => sub { File::Spec->catfile( @_,
 use constant DEB_COMPAT         => sub { File::Spec->catfile( @_,
                                             DEB_DEBIAN_DIR->(), 'compat' )
                                 };
+use constant DEB_SPEC_FILE_VERSION
+                                => 4;
+                                
 use constant DEB_CONTROL        => sub { File::Spec->catfile( @_,
                                             DEB_DEBIAN_DIR->(), 'control' )
                                 };
