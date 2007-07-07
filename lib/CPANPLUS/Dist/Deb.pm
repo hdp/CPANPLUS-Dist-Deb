@@ -668,7 +668,14 @@ Description: $desc
 EOF
 
         ### run the contents through the callback for munging
-        $contents = $cb->_callbacks->munge_dist_metafile->( $cb, $contents );
+        ### make this conditional, as this was introduced in the
+        ### dev branch of 0.81_01, so not all may have it (automatically)
+        ### installed
+        if( $cb->_callbacks->munge_dist_metafile ) {
+            $contents = $cb->_callbacks->munge_dist_metafile->( 
+                            $cb, $contents 
+                        );
+        }                        
 
         $fh->print( $contents );
 
