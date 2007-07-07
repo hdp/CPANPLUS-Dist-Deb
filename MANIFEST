@@ -1,5 +1,4 @@
 CHANGES
-META.yml
 lib/CPANPLUS/Dist/Deb.pm
 lib/CPANPLUS/Dist/Deb/Constants.pm
 Makefile.PL
