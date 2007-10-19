@@ -811,7 +811,6 @@ EOF
         $dist->status->rules( $rules_file );
     }
 
-
     $dist->status->prepared(1);
     return $dist->status->builddir;
 }
@@ -960,6 +959,12 @@ sub create {
         unless( $cb->_chdir( dir => $conf->_get_build('startdir') ) ) {
             error(loc("Unable to '%1' back to startdir",'chdir'));
         }
+    }
+
+    ### if we're asked to clean up our sources, then they
+    ### live in $dist->status->debiandir. Rmtree the lot 
+    unless ( $keep_source ) {
+        $cb->_rmdir( dir => $dist->status->debiandir );
     }
 
     $dist->status->created(1);
