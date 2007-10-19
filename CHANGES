@@ -1,3 +1,7 @@
+Changes for 0.10        Fri Oct 19 15:26:42 2007
+================================================
+*   Promote 0.09_01 to stable.
+
 Changes for 0.09_01     Fri Oct 19 15:09:44 2007
 ================================================
 *   Make $dist->create adhere to the 'keep_source' option,
