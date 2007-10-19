@@ -964,7 +964,9 @@ sub create {
     ### if we're asked to clean up our sources, then they
     ### live in $dist->status->debiandir. Rmtree the lot 
     unless ( $keep_source ) {
-        $cb->_rmdir( dir => $dist->status->debiandir );
+        my $dir = $dist->status->debiandir;
+        msg(loc("Cleaning up meta directory '%1'",$dir), $verbose);
+        $cb->_rmdir( dir => $dir );
     }
 
     $dist->status->created(1);
