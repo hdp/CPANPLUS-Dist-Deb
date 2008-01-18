@@ -140,11 +140,11 @@ use constant DEB_BIN_BUILDPACKAGE
                                         return $p;
                                 };
 
-                                ### leave out all .a and .so files
+                                ### leave out all .a and .so and ._ files
                                 ### all properly shell escaped ;(
 use constant DEB_DPKG_SOURCE_IGNORE
                                 #=> '-i\(\?i:.\*.\(\?:so\|a\$\)\)';
-                                => '-i.s?[oa]';
+                                => '-i.s?[_oa]';
 
 use constant DEB_PACKAGE_NAME   => sub {my $mod = shift or return;
                                         my $pre = shift || '';
