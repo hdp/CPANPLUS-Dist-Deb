@@ -182,10 +182,18 @@ use constant DEB_DEFAULT_PACKAGE_VERSION
                                 => 1;
                                 
 use constant DEB_VERSION        => sub {my $mod = shift or return;
-                                        my $ver = shift || 
+                                        my $debver = shift || 
                                                   DEB_DEFAULT_PACKAGE_VERSION;
-                                        return $mod->package_version . 
-                                                '-' . $ver;
+                                        my $modver = $mod->package_version;
+
+                                        ### XXX _ is an illegal char in versions,
+                                        ### so translate them to dots. If we would
+                                        ### just strip it, 0.11_01 would become
+                                        ### 0.1101 which is > 0.12 in debian
+                                        ### version comparison. otoh, 0.11.01 < 0.12
+                                        $modver =~ s/_/./g;
+
+                                        return $modver. '-' . $debver;
                                 };
 use constant DEB_RULES_ARCH     => sub { return shift() ? 'any' : 'all'; };
 use constant DEB_DEB_FILE_NAME  => sub {my $mod = shift() or return;

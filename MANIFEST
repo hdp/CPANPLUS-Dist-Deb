@@ -45,4 +45,3 @@ t/src/MM/xs/Foo-Bar/Makefile.PL
 t/src/MM/xs/Foo-Bar/MANIFEST
 t/src/MM/xs/Foo-Bar/README
 t/src/MM/xs/Foo-Bar/test.pl
-META.yml                                 Module meta-data (added by MakeMaker)
