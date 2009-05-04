@@ -27,6 +27,11 @@ if( @ARGV ) {
     $map->{ $parts[0] } = [ $parts[1] ];
 }    
 
+local %ENV = %ENV;
+delete @ENV{qw/
+  PERL_MM_OPT MODULEBUILDRC
+/};
+
 ### create a debian dist using EU::MM and no XS files
 {   for my $type ( keys %$map ) {
         for my $dir ( @{ $map->{$type} } ) {

@@ -1,3 +1,8 @@
+Changes for 0.11_01
+*   Change '_' in versions to '.' -- removing '_' entirely breaks Debian
+    version comparisons.
+*   Use $^X in generated debian/rules file instead of hardcoding /usr/bin/perl.
+
 Changes for 0.10        Fri Oct 19 15:26:42 2007
 ================================================
 *   Promote 0.09_01 to stable.

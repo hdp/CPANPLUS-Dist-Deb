@@ -59,7 +59,7 @@ BEGIN {
     $CONTENTS = {
         xs  => 
             [       # ones we need
-                [   $man3 . q[/Foo::Bar.3pm],
+                [   $man3 . qq[/Foo::Bar.$Config{man3ext}],
                     $arch . q[/Foo/Bar.pm],
                     $arch . q[/auto/Foo/Bar/Bar.bs],
                     $arch . q[/auto/Foo/Bar/Bar.so],
@@ -72,7 +72,7 @@ BEGIN {
             ],
         noxs => 
             [       # ones we need
-                [   $man3 . q[/Foo::Bar.3pm],
+                [   $man3 . qq[/Foo::Bar.$Config{man3ext}],
                     $pref . q[/Foo/Bar.pm],
                     $bin  . q[/foobar.pl],
                 ],
